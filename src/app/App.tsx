@@ -1,24 +1,17 @@
 import React from 'react';
 import './App.scss';
+import AddTodo from '../component/AddTodo';
+import { Provider } from 'react-redux';
+import store from "./store";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <div className="App">
+        <AddTodo />
+      </div>
+    </Provider>
+  )
 }
 
 export default App;
