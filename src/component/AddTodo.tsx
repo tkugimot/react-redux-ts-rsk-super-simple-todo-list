@@ -26,6 +26,7 @@ const AddTodo = () => {
         <div>
             <form onSubmit={onSubmit}>
                 <input value={text} onChange={onChange} />
+                <button type="submit">Add Todo</button>
             </form>
         </div>
     );

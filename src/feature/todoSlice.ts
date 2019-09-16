@@ -22,7 +22,9 @@ const todoSlice = createSlice({
                 text: action.payload.text,
                 completed: false
             }
+            console.log(newTodo);
             state.push(newTodo);
+            console.log(state);
         }
     }
 });
