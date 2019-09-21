@@ -1,4 +1,6 @@
 import * as React from "react";
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 interface TodoProps {
     id: number
@@ -8,9 +10,9 @@ interface TodoProps {
 
 const Todo = ({ id, text, completed }: TodoProps) => {
     return (
-        <li>
-            {id}, {text}, {completed}
-        </li>
+        <ListItem key={id}>
+            <ListItemText primary={text} />
+        </ListItem>
     )
 }
 

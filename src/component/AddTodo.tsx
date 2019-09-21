@@ -16,7 +16,10 @@ const useStyles = makeStyles({
         padding: '0 30px',
     },
     input: {
-        margin: '30px 0'
+        margin: '30px 0',
+    },
+    formcontrol: {
+        textAlign: 'left',
     }
 });
   
@@ -26,7 +29,6 @@ const AddTodo = () => {
     const [text, setText] = useState("");
 
     const onSubmit = (e: any) => {
-        console.log("submit");
         e.preventDefault();
         if (text.trim() === "") return null;
         dispatch(
@@ -34,16 +36,16 @@ const AddTodo = () => {
                 text
             })
         )
+        setText("");
     };
 
     const onChange = (e: any) => {
-        console.log(e.target.value);
         setText(e.target.value);
     };
 
     return (
         <div>
-            <FormControl>
+            <FormControl className={classes.formcontrol}>
                 <form onSubmit={onSubmit}>
                     <InputLabel htmlFor="my-input">Write Todo</InputLabel>
                     <Input value={text} 
