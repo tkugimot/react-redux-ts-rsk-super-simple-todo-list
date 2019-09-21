@@ -2,7 +2,7 @@ import * as React from "react";
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-interface TodoProps {
+export interface TodoProps {
     id: number
     text: string
     completed: boolean
