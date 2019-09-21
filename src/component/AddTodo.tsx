@@ -26,6 +26,7 @@ const AddTodo = () => {
     const [text, setText] = useState("");
 
     const onSubmit = (e: any) => {
+        console.log("submit");
         e.preventDefault();
         if (text.trim() === "") return null;
         dispatch(
@@ -42,14 +43,16 @@ const AddTodo = () => {
 
     return (
         <div>
-            <FormControl onSubmit={onSubmit}>
-                <InputLabel htmlFor="my-input">Write Todo</InputLabel>
-                <Input value={text} 
-                    onChange={onChange} 
-                    id="my-input" 
-                    aria-describedby="my-helper-text"
-                    className={classes.input} />
-                <Button variant="contained" className={classes.button}>Add</Button>
+            <FormControl>
+                <form onSubmit={onSubmit}>
+                    <InputLabel htmlFor="my-input">Write Todo</InputLabel>
+                    <Input value={text} 
+                        onChange={onChange} 
+                        id="my-input" 
+                        aria-describedby="my-helper-text"
+                        className={classes.input} />
+                    <Button variant="contained" className={classes.button} type="submit">Add</Button>
+                </form>
             </FormControl>
         </div>
     );
