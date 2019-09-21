@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from 'redux-starter-kit'
 
-interface TodoState {
+export interface TodoState {
     id: number
     text: string
     completed: boolean
 }
 
-interface IAddTodo {
+export interface IAddTodo {
     text: string
 }
 
-const initialState: TodoState[] = []
+export const initialState: TodoState[] = [];
 
 const todoSlice = createSlice({
     slice: 'todoList',
@@ -21,7 +21,7 @@ const todoSlice = createSlice({
                 id: state.length + 1,
                 text: action.payload.text,
                 completed: false
-            }
+            };
             state.push(newTodo);
         }
     }
